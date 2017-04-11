@@ -1,0 +1,197 @@
+@import "compass/reset";
+@import "compass/css3/flexbox";
+
+@mixin font-dpr($font-size) {
+  font-size: $font-size; /*no*/
+
+  [data-dpr="2"] & {
+    font-size: $font-size * 2; /*no*/
+  }
+
+  [data-dpr="3"] & {
+    font-size: $font-size * 3; /*no*/
+  }
+}
+
+* {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+.content {
+  width: 640px;
+  margin: 0 auto;
+}
+
+.header {
+  background: #232323;
+  width: 640px;
+  height: 88px;
+  @include display-flex(flex);
+  @include align-items(center);
+  .icon {
+    width: 96px;
+    height: 96px;
+  }
+  .left {
+
+  }
+  .right {
+
+  }
+  .title {
+    @include font-dpr(18px);
+    color: #ffffff;
+    text-align: center;
+    margin: 20px 152px 20px 152px;
+  }
+}
+
+.banner {
+  img {
+    width: 100%;
+    height: 100%;
+  }
+}
+
+.tab {
+  width: 640px;
+  height: 76px;
+  .item {
+    text-decoration: none;
+    width: 112px;
+    height: 40px;
+    display: inline-block;
+    margin: 18px 20px 18px 20px;
+    @include font-dpr(14px);
+    color: #000000;
+    text-align: center;
+    span {
+      width: 90px;
+      height: 5px;
+      display: inline-block;
+    }
+  }
+  .selected {
+    color: #ff5900;
+    span {
+      background: #ff5900;
+    }
+  }
+}
+
+.tuanbtn {
+  background-image: url("../../dist/images/index-tuanbtn-back.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  width: 622px;
+  height: 72px;
+  margin: 10px 10px 10px 10px;
+  .title {
+    @include font-dpr(14px);
+    color: #ffffff;
+    text-shadow: 0 2px 1px rgba(0, 0, 0, 0.10); /*no*/
+    text-align: center;
+    margin: 16px 0 14px 90px;
+    width: 340px;
+    height: 40px;
+    line-height: 40px;
+    display: inline-block;
+    float: left;
+  }
+  .plane {
+    background-image: url("../../dist/images/index-tuanbtn-plane.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 125px;
+    height: 71px;
+    display: inline-block;
+    float: right;
+    margin: 12px 57px 0 0;
+  }
+}
+
+.hot {
+  background: #ffffff;
+  width: 640px;
+  height: 40px;
+  .title {
+    width: 96px;
+    height: 32px;
+    line-height: 32px;
+    margin: 4px 0 4px 20px;
+    @include font-dpr(14px);
+    color: #cfcfcf;
+  }
+}
+
+.hotlist {
+  width: 640px;
+  .item {
+    height: 240px;
+    .left {
+      float: left;
+      width: 240px;
+      height: 240px;
+      img {
+        width: 240px;
+        height: 240px;
+      }
+    }
+    .right {
+      float: right;
+      margin-top: 30px;
+      margin-left: 10px;
+      width: 380px;
+      img {
+        width: 100%;
+        height: 100%;
+      }
+      .title {
+        @include font-dpr(18px);
+        height: 50px;
+        line-height: 50px;
+        color: #4c4c4c;
+        display: block;
+      }
+      .desc {
+        @include font-dpr(12px);
+        color: #999999;
+        height: 33px;
+        line-height: 33px;
+        letter-spacing: 0;
+        display: block;
+      }
+      .price {
+        @include font-dpr(12px);
+        color: #f35a00;
+        height: 59px;
+        line-height: 59px;
+        letter-spacing: 0;
+        display: block;
+        .money {
+          @include font-dpr(18px);
+        }
+      }
+      .tuan-price {
+        background: #e6e6e6;
+        border-radius: 12px;
+        width: 198px;
+        height: 36px;
+        display: inline-block;
+        text-align: center;
+        .tuantitle {
+          @include font-dpr(12px);
+          height: 33px;
+          line-height: 36px;
+          color: #444444;
+          letter-spacing: 0;
+        }
+      }
+      .tuancount {
+        line-height: 36px;
+      }
+    }
+  }
+}

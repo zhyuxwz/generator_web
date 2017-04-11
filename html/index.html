@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>index</title>
+</head>
+<link href="../dist/css/index.css" rel="stylesheet" type="text/css"/>
+<body>
+<div class="content">
+    <div id="header"></div>
+    <div id="tab"></div>
+    <div id="banner"></div>
+    <div class="tuanbtn icon-index-tuanbtn-back">
+        <span class="title">点击这里快速查看最新团购</span>
+        <span class="plane"></span>
+    </div>
+    <div class="hot"><span class="title">热门推荐</span></div>
+    <div id="hotlist"></div>
+    <div class="footer"></div>
+</div>
+<script src="http://g.tbcdn.cn/mtb/lib-flexible/0.3.4/??flexible_css.js,flexible.js"></script>
+<script src="../dist/js/handlebars.runtime.min.js"></script>
+<script src="../dist/js/zepto.min.js"></script>
+<script src="../dist/templates/header.js"></script>
+<script src="../dist/templates/index/banner.js"></script>
+<script src="../dist/templates/index/tab.js"></script>
+<script src="../dist/templates/index/hotlist.js"></script>
+<script>
+  $('#header').html(S.templates.header())
+  $('#tab').html(S.templates.tab({
+      "data": [{"name": "热门推荐", "selected": true},
+        {"name": "旅行户外", "selected": false},
+        {"name": "天然洗护", "selected": false},
+        {"name": "家居生活", "selected": false},
+        //{"name": "养生健康", "selected": false}
+      ]
+    }
+  ))
+  $('#banner').html(S.templates.banner({"data": ["../dist/images/banner-1.png"]}))
+  $('#hotlist').html(S.templates.hotlist({
+    "data": [{
+      "picurl": "../dist/images/hot-pic-1.png",
+      "title": "天空草莓",
+      "desc": "松露巧克力和草莓的完美结合",
+      "money": 25.0,
+      "unit": "只",
+      "tuanmoney": 22.0,
+      "tuancount": 7
+    }, {
+      "picurl": "../dist/images/hot-pic-2.png",
+      "title": "芝士土豆西红柿",
+      "desc": "高热量的西餐 适合增肥人群",
+      "money": 64.8,
+      "unit": "份",
+      "tuanmoney": 60.0,
+      "tuancount": 9
+    }, {
+      "picurl": "../dist/images/hot-pic-1.png",
+      "title": "天空草莓",
+      "desc": "松露巧克力和草莓的完美结合",
+      "money": 25.0,
+      "unit": "只",
+      "tuanmoney": 22.0,
+      "tuancount": 7
+    }, {
+      "picurl": "../dist/images/hot-pic-2.png",
+      "title": "芝士土豆西红柿",
+      "desc": "高热量的西餐 适合增肥人群",
+      "money": 64.8,
+      "unit": "份",
+      "tuanmoney": 60.0,
+      "tuancount": 9
+    }]
+  }))
+</script>
+</body>
+</html>

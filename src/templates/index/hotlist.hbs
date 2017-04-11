@@ -1,0 +1,16 @@
+<div class="hotlist">
+  {{#each data}}
+    <div class="item">
+      <div class="left"><img src="{{picurl}}"/></div>
+      <div class="right">
+        <span class="title">{{this.title}}</span>
+        <span class="desc">{{this.desc}}</span>
+        <span class="price">￥<span class="money">{{this.money}}</span><span class="unit">/{{this.unit}}</span></span>
+        <span class="tuan-price">
+          <span class="tuantitle">团购价：{{this.tuanmoney}}/{{this.unit}}</span>
+        </span>
+        <span class="tuancount">{{this.tuancount}}人已团</span>
+      </div>
+    </div>
+  {{/each}}
+</div>
